@@ -20,7 +20,7 @@ def extract_dicom_info(dicom_file: Path) -> tuple:
         dicom_file (Path): Path to the DICOM file.
 
     Returns:
-        tuple: A tuple containing (delay_inj_acq, injected_dose, patient_weight, dose_at_acq, nFrames, nSlices).
+        tuple: A tuple containing (delay_inj_acq, injected_dose, patient_weight, nFrames, nSlices).
     """
     ds = pydicom.dcmread(dicom_file, stop_before_pixels=True)
     try:
@@ -39,11 +39,7 @@ def extract_dicom_info(dicom_file: Path) -> tuple:
         acq_time = datetime.strptime(acquisition_time, fmt)
         delay_inj_acq = (acq_time - inj_time).total_seconds()
 
-        # Calculate the dose at the time of acquisition due to decay
-        decay_factor = np.exp(-np.log(2) * delay_inj_acq / hl)
-        dose_at_acq = injected_dose * decay_factor  # in Bq
-
-        return delay_inj_acq, injected_dose, patient_weight, dose_at_acq, nFrames, nSlices
+        return delay_inj_acq, injected_dose, patient_weight, nFrames, nSlices
     except Exception as e:
         raise RuntimeError(f"Error extracting dose from {dicom_file}: {e}")
 
@@ -210,4 +206,5 @@ def pet_patlak(
     nib.save(imgVd, os.path.join(output_dir, 'Vd_map.nii'))
 
     print(f"Saved Ki map to: {os.path.join(output_dir, 'Ki_map.nii')}")
+
     print(f"Saved Vd map to: {os.path.join(output_dir, 'Vd_map.nii')}")
