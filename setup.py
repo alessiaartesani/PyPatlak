@@ -13,7 +13,7 @@ setup(
     ],
     entry_points={
         'console_scripts': [
-            'patlak-analysis=patlak_analysis.main:main',
+            'patlak-analysis=patlak.patlak:main',
         ],
     },
     author='Alessia Artesani',
