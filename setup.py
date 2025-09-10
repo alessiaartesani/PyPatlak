@@ -18,7 +18,7 @@ setup(
     },
     author='Alessia Artesani',
     description='A command-line tool for Patlak analysis of dynamic PET data.',
-    long_description=open('README.md').read(),
+    long_description=open('README.md', encoding='utf-8').read(),
     long_description_content_type='text/markdown',
     url='https://github.com/alessiaartesani/PyPatlak',
     classifiers=[
