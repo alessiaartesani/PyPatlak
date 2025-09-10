@@ -13,12 +13,6 @@ This tool provides a simple and robust command-line interface for performing vox
 
 To get started, you'll need **Python 3.8+** and the **dcm2niix** executable installed on your system.
 
-Simply use ```pip``` to install the package from PyPI:
-
-```bash
-pip install pypatlak
-```
-
 Create a virtual environment and activate it (recommended):
 
 **Windows:**
@@ -30,6 +24,12 @@ mypatlak_env\Scripts\activate
 ```bash
 python -m venv mypatlak_env
 source mypatlak_env/bin/activate  
+```
+
+Simply use ```pip``` to install the package from PyPI:
+
+```bash
+pip install .
 ```
   
 ## Usage 🚀
