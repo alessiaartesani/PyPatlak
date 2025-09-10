@@ -190,7 +190,7 @@ def pet_patlak(
     intercept = meanY - slope * meanX
 
     # Assign calculated values to the maps
-    Ki_map = slope
+    Ki_map = slope * 100 # Convert ml/min/ml to ml/min/100ml
     Vd_map = intercept * 100  # Convert Vd to percentage
 
     # Set negative values to zero
@@ -208,3 +208,4 @@ def pet_patlak(
     print(f"Saved Ki map to: {os.path.join(output_dir, 'Ki_map.nii')}")
 
     print(f"Saved Vd map to: {os.path.join(output_dir, 'Vd_map.nii')}")
+
