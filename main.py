@@ -59,7 +59,7 @@ def main():
     if not dicom_files:
         raise FileNotFoundError(f"No DICOM files found in {dicom_dir}")
     first_dicom = dicom_files[0]
-    inj_delay, _, _, _, n_frames, n_slices = extract_dicom_info(first_dicom)
+    inj_delay, _, _, n_frames, n_slices = extract_dicom_info(first_dicom)
 
     delay_slice = np.array([extract_acquisition_delay(d) for d in dicom_files])
     delay_frame = np.array([delay_slice[i * n_slices] for i in range(n_frames)])
@@ -116,4 +116,5 @@ def main():
     print("=====================================================================")
 
 if __name__ == "__main__":
+
     main()
