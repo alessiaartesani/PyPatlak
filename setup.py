@@ -10,10 +10,11 @@ setup(
         'nibabel',
         'scipy',
         'pandas',
+        'dcm2niix'
     ],
     entry_points={
         'console_scripts': [
-            'patlak-analysis=patlak.patlak:main',
+            'pypatlak=patlak.patlak:main',
         ],
     },
     author='Alessia Artesani',

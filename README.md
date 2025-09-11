@@ -52,6 +52,8 @@ pypatlak <dicom_dir> <aif_mask_path> <output_dir> <patient_id> [options]
 
 **Options**
 
+```--rf``` RECOVERY_FACTOR: Correct for the partial volume effect and scale AIF mask mean values (default: 1.0)
+
 ```--input-function``` INPUT_FUNCTION: Path to the population-based input function CSV file. (default: ./input_function.csv)
 
 ```--dcm2niix-path``` DCM2NIIX_PATH: Path to the dcm2niix executable. (default: dcm2niix, assumes it's in your system's PATH)
@@ -60,7 +62,7 @@ pypatlak <dicom_dir> <aif_mask_path> <output_dir> <patient_id> [options]
 
 To run the analysis on a dataset:
 ```bash
-pypatlak /path/to/my/dicoms /path/to/my/aif_mask.nii.gz ./results my_patient_01
+pypatlak /path/to/my/dicoms /path/to/my/aif_mask.nii.gz /path/to/my/dicoms/results my_patient_01 --rf 1.2
 ```
 
 ## Required Folder Structure 📂
