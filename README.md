@@ -110,7 +110,9 @@ Repository Citation:
 
 **Paper Citation:**
 
-*To be added after publication.*
+pyPatlak: Open-Source Voxel-Wise Patlak Analysis of Dynamic PET Data
+Alessia Artesani
+medRxiv 2025.09.16.25335861; doi: https://doi.org/10.1101/2025.09.16.25335861
 
 **License**
 
